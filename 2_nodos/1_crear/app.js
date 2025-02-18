@@ -1,191 +1,162 @@
-// const padre = document.querySelector('.container');
+// const padre = document.querySelector(`.container`);
 // console.log(padre);
-// const nodo = document.createElement('h2');
+// const nodo = document.createElement("h2");
 // padre.appendChild(nodo);
 
-// const padre = document.querySelector('#list');
-// // console.log(padre);
-// let html = document.createElement("li");
-// html.textContent = "item nuevo";
-// html.classList.add("item");
-// // list.appendChild(html);
-
-// let html1 = document.createElement("li");
-// html1.textContent = "HTML";
-// html1.classList.add("item");
-// // list.appendChild(html1);
-
-// let css = document.createElement("li");
-// css.textContent = "CSS";
-// css.classList.add("item");
-// // list.appendChild(css);
-
-// let javascript = document.createElement("li");
-// javascript.textContent = "Javascript";
-// javascript.classList.add("item");
-// // list.appendChild(javascript);
-
-// list.append( html, html1, css, javascript);
-
-// const card = document.querySelector(".card");
-// const lista_sin_orden = document.querySelector("#list");
-// const titulo= document.createElement("h1");
-// titulo.textContent = "Soy el título más de los más!";
-// // card.appendChild(titulo);
-// // card.insertBefore(titulo, final);
-
-// const afterBegin = document.createElement("li");
-// afterBegin.classList.add("item");
-// afterBegin.textContent = "item agregado despues del comienzo";
-// //solución
-// lista_sin_orden.insertAdjacentElement("afterbegin", afterBegin);
-
-
-// const padre = document.querySelector(".container");
-// const nodo = document.createElement("h2");
-// padre.appendChild(nodo)
-
+// identificar el id list
 const list = document.querySelector("#list");
 
-let item = document.createElement("li");
+// crear una nueva lista
 let html = document.createElement("li");
+
+// agregar nuevo item
+html.textContent = "Item Nuevo";
+
+// agregar el nuevo texto
+html.classList.add("item");
+list.appendChild(html);
+
+
+let html1 = document.createElement("li");
 let css = document.createElement("li");
 let js = document.createElement("li");
 
-item.textContent = "Item nuevo";
 html.textContent = "HTML";
 css.textContent = "CSS";
 js.textContent = "JS";
 
-item.classList.add("item");
 html.classList.add("item");
 css.classList.add("item");
 js.classList.add("item");
 
-list.append(item, js, css, html);
+list.appendChild(html);
+list.appendChild(css);
+list.appendChild(js);
+
 
 const card = document.querySelector(".card");
-const lista_sin_orden = document.querySelector("#list");
+const final = document.querySelector("#list");
 const titulo = document.createElement("h2");
-titulo.textContent = "Soy el titulo más de los más";
+// titulo.textContent = "Soy el titulo nuevo";
 // card.appendChild(titulo);
-// card.insertBefore(titulo, final)
+card.insertBefore(titulo, final);
 
-const afterbegin = document.createElement("li");
+const afterbegin = document.createElement("li")
 afterbegin.classList.add("item");
-afterbegin.textContent = "Al inicio de la lista ordenada";
+afterbegin.textContent = "al inicio";
+// antes de la lista
+final.insertAdjacentElement("afterbegin", afterbegin)
+// fuera de la lista
+final.insertAdjacentElement("afterend", afterbegin)
 
-// solucion
-lista_sin_orden.insertAdjacentElement("afterend", afterbegin);
-
-const $dias = document.querySelector("#dias");
 
 const dias = [
-  {
-    id: 1,
-    name: "Lunes",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-  {
-    id: 2,
-    name: "Martes",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-  {
-    id: 3,
-    name: "Miercoles",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-  {
-    id: 4,
-    name: "Jueves",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-  {
-    id: 5,
-    name: "Viernes",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-  {
-    id: 6,
-    name: "Sabado",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-  {
-    id: 7,
-    name: "Domingo",
-    img: "https://picsum.photos/640/360",
-    paragraph:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
-  },
-];
+    {
+      id: 1,
+      name: "Lunes",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+    {
+      id: 2,
+      name: "Martes",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+    {
+      id: 3,
+      name: "Miercoles",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+    {
+      id: 4,
+      name: "Jueves",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+    {
+      id: 5,
+      name: "Viernes",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+    {
+      id: 6,
+      name: "Sabado",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+    {
+      id: 7,
+      name: "Domingo",
+      img: "https://picsum.photos/640/360",
+      paragraph:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+    },
+  ];
 
-$fragment = document.createDocumentFragment();
 
-dias.map(({name, img,paragraph}) => {
-  //Creamos los elementos
+  console.log(dias);
 
-  const $card = document.createElement("div");
-  const $card_header = document.createElement("div");
-  const $card_h2 = document.createElement("h2");
-  const $card_body = document.createElement("div");
-  const $card_img = document.createElement("img");
-  const $card_paragraph = document.createElement("P");
-  const $button = document.createElement("a");
-  const $button_span = document.createElement("span");
-  const $button_icon = document.createElement("i");
+  const $dias = document.querySelector("#dias");
+ 
 
-  //Agregamos los estilos CSS:
+$fragmen = document.createDocumentFragment();
+  dias.map( ({name,img,paragraph}) => {
+    const $card = document.createElement("div");
+    const $card_header = document.createElement("div");
+    const $card_h2 = document.createElement("h2");
+    const $card_body = document.createElement("div");
+    const $card_img = document.createElement("img");
+    const $card_paragraph = document.createElement("p");
+    const $card_button = document.createElement("a");
+    const $card_button_span = document.createElement("span");
+    const $card_button_icon = document.createElement("i");
 
-$card.classList.add("card");
-$card_header.classlist.add("card__header");
-$card_h2.classList.add("card__title");
-$card_body.classList.add("card__body");
-$card_img.classList.add("card__img");
-$card_paragraph.classList.add("card__paragraph");
-$button.classList.add("button", "button--outline");
-$button_span.classList.add("button__text");
-$button_icon.classList.add("bx", "bxs-chevro-right", "button__icon");
+    // agregar los estilos
 
-//Agregamos los valores del objeto a los elementos:
+    $card.classList.add("card");
+    $card_header.classList.add("card_header");
+    $card_h2.classList.add("carde_title");
+    $card_body.classList.add("card_body");
+    $card_img.classList.add("card_img");
+    $card_paragraph.classList.add("card_paragraph");
+    $card_button.classList.add("button", "button--outline");
+    $card_button_span.classList.add("button_text");
+    $card_button_icon.classList.add("bx", "bxs-chevro-right", "button_icon");
+
+// agregamos los valores del objeto a los elementos
 
 $card_h2.textContent = name;
 $card_paragraph.textContent = paragraph;
-$button_span.textContent = "Saber mas";
+$card_button_span.textContent = "saber mas";
 
-//Agregar los atributos:
+// agregar los atributos
 
-$card_img.setAttribute("src",img);
-$card_img.setAttribute("alt",name);
-$button.setAttribute("href", "#");
+$card_img.setAttribute("src", img);
+$card_img.setAttribute("alt", name);
+$card_button.setAttribute("href", "#");
 
-//Agregamos loas elementos hijos:
+// agregamos los elementos hijos
 
 $card_body.appendChild($card_img);
 $card_body.appendChild($card_paragraph);
-$card.header.appendChild($card_h2);
+$card_header.appendChild($card_h2);
 $card.appendChild($card_header);
-$card.appendChild($button_span);
-$card.appendChild($button_icon);
-$card_body.appendChild($button);
+$card_button.appendChild($card_button_span);
+$card_body.appendChild($card_button);
 $card.appendChild($card_body);
-$fragment.append($card);
-
-});
-
-$dias.append($fragment);
-
+// $dias.appendChild($card);
+$fragmen.append($card);
+  } )
+  
+$dias.append($fragmen);
 
 
