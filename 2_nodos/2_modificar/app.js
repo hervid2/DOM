@@ -1,61 +1,81 @@
-
-
-// Creamos los elementos de la card
-
-const $card = document.createElement("div");
-const $card_header = document.createElement("div");
-const $card_title = document.createElement("h2");
-const $card_body = document.createElement("div");
-const $card_img = document.createElement("img");
-const $card_paragraph = document.createElement("p");
-const button = document.createElement("a");
-const button_span = document.createElement("span");
-const button_icon = document.createElement("i");
-
-// Agregamos loas estilos css:
-
-$card.classList.add("card");
-$card_header.classList.add("card-header");
-$card_h2.classList.add("card__title");
-$card_body.classList.add("card__body");
-$card_img.classList.add("card__img");
-$card_paragraph.classList.add("card__paragraph");
-$button.classList.add("button", "button--outline");
-$button_span.classList.add("button__text");
-$button_icon.classList.add("bx", "bxs-chevro-right", "button_icon");
-
-
-// Agregamos los valores del objeto a los elementos
-
-$card_h2.textContent = card.name;
-$card_paragraph.textContent = card.$card_paragraph;
-$button_span.textContent = "saber más";
-
-// Agregar los atributos
-
-$card_img.setAttribute("src", card.img);
-$card_img.setAttribute("alt", card.name);
-$button.setAttribute("href", "#");
-
-// Agregamos los elementos hijos
-
-$card_header.append($card_h2);
-$button.append($button_span, $button_icon);
-$card_body.append($card_img, $card_paragraph, $button);
-$card.append($card_header, $card_body);
-
-// insertAdjacent...
-// $cards.append($card);
-// $cards.insertAdjacentElement("beforebegin",$card);
-$cards.insertAdjacentElement("afterbegin",$card);
-// $cards.insertAdjacentElement("beforeend",$card);
-// $cards.insertAdjacentElement("afterend",$card);
-
-const array = [...$cards.children];
-array.map((item, index, array) => {
-    if (index % 2 ==0){
-        item.querySelector('a.button').classList.toggle('bg-error');
-    }else{
-        item.querySelector('a.button').classList.toggle('bg-white');
-    }
-});
+// Se define un objeto 'card' con información de la tarjeta que se va a crear dinámicamente.
+const card =  {
+    id: 1,  // ID de la tarjeta
+    name: "Titulo de la nueva card",  // Título de la tarjeta
+    img: "https://picsum.photos/640/360",  // URL de la imagen de la tarjeta
+    paragraph:  // Descripción breve de la tarjeta
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consectetur.",
+  };
+  
+  // Se obtiene el contenedor con el id 'cards', donde se agregarán las tarjetas.
+  const $cards = document.querySelector('#cards');
+  
+  // Se crean los elementos HTML que compondrán la tarjeta.
+  const $card = document.createElement('div');  // Crea el contenedor principal de la tarjeta.
+  const $card_header = document.createElement('div');  // Crea el contenedor para el encabezado de la tarjeta.
+  const $card_title = document.createElement('h2');  // Crea el título de la tarjeta.
+  const $card_body = document.createElement('div');  // Crea el contenedor para el cuerpo de la tarjeta.
+  const $card_img = document.createElement('img');  // Crea la etiqueta <img> para la imagen de la tarjeta.
+  const $card_paragraph = document.createElement('p');  // Crea el párrafo de descripción.
+  const $button = document.createElement('a');  // Crea un enlace que funcionará como botón.
+  const $button_span = document.createElement('span');  // Crea un <span> dentro del botón para el texto.
+  const $button_icon = document.createElement('i');  // Crea un icono para el botón (con clase de icono).
+  
+  // Se agregan clases a cada uno de los elementos creados para aplicarles estilos específicos.
+  $card.classList.add('card');  // Clase principal de la tarjeta.
+  $card_header.classList.add('card_header');  // Clase para el encabezado de la tarjeta.
+  $card_title.classList.add('card_title');  // Clase para el título.
+  $card_body.classList.add('card_body');  // Clase para el cuerpo de la tarjeta.
+  $card_img.classList.add('card__img');  // Clase para la imagen de la tarjeta.
+  $card_paragraph.classList.add('card_paragraph');  // Clase para el párrafo descriptivo.
+  $button.classList.add('button', 'button--outline');  // Clases para el estilo del botón (con borde).
+  $button_span.classList.add('button__text');  // Clase para el texto dentro del botón.
+  $button_icon.classList.add('bx', 'bxs-chevron-right', 'button__icon');  // Clases para el icono del botón (flecha hacia la derecha).
+  
+  // Se asigna el contenido de texto al título y párrafo de la tarjeta.
+  $card_title.textContent = card.name;  // Asigna el nombre de la tarjeta al título.
+  $card_paragraph.textContent = card.paragraph;  // Asigna el texto de la descripción al párrafo.
+  $button_span.textContent = 'Saber Más';  // Asigna el texto del botón.
+  
+  
+  // Se configuran los atributos de la imagen y el enlace (botón).
+  $card_img.setAttribute('src', card.img);  // Asigna la URL de la imagen a la etiqueta <img>.
+  $card_img.setAttribute('alt', card.name);  // Asigna el texto alternativo de la imagen (el nombre de la tarjeta).
+  $button.setAttribute('href', '#');  // Asigna el enlace del botón (aquí se usa '#' como un enlace vacío).
+  
+  // Se agragan los elementos en el orden adecuado: 
+  // El título se agrega al encabezado, el icono y el texto se agregan al botón, 
+  // y el cuerpo de la tarjeta se compone de la imagen, el párrafo y el botón.
+  $card_header.appendChild($card_title);  // Se agrega el título dentro del encabezado.
+  $button.append($button_span, $button_icon);  // Se agrega el texto y el icono dentro del botón.
+  $card_body.append($card_img, $card_paragraph, $button);  // Se agrega la imagen, el párrafo y el botón dentro del cuerpo de la tarjeta.
+  $card.append($card_header, $card_body);  // Se agrega el encabezado y el cuerpo a la tarjeta principal.
+  
+  // Finalmente, se agrega la tarjeta completa al contenedor que se obtuvo al principio.
+  //$cards.append($card);  // Se agrega la tarjeta al contenedor con id 'cards'.
+  
+  // const children = $cards.childNodes; // Se accede a los hijos de las cards
+  // console.log(children); // Muestra los hijos de las cards
+  // const array = [...$cards.children]; 
+  
+  // array.forEach((element, posicion) => { // Se aplica el metodo array.form() el cual tranforma el objeto para volverlo iterable
+  //   if(posicion % 2 === 0) { // Se aplica la condición de si es par o impar
+  //      element.style.backgroundColor = 'white'; // si se cumple la condición se modifica el bacgrouncolor
+  //      console.log(element); // Imprime en la consola los elementos que cumplan esa funcion
+  //    }
+  //  });
+  
+  
+  $cards.insertAdjacentElement('beforeend', $card); // Inserta un los elemntos creados al contenedor inicial al que accedimos, en una posicion antes del final
+  
+   const array = [...$cards.children]; 
+  
+   for (let i = 0; i < array.length; i++) {
+     const element = array[i]; 
+     console.log(element);
+     if (i % 2 === 0) {
+       element.querySelector('a').classList.toggle('bg-error');
+     } else {
+      element.querySelector('a').classList.toggle('bg-white');
+     }
+   }
