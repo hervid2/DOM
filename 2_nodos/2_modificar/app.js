@@ -69,7 +69,8 @@ const card =  {
   $cards.insertAdjacentElement('beforeend', $card); // Inserta un los elemntos creados al contenedor inicial al que accedimos, en una posicion antes del final
   
    const array = [...$cards.children]; 
-  
+
+
    for (let i = 0; i < array.length; i++) {
      const element = array[i]; 
      console.log(element);
@@ -77,5 +78,19 @@ const card =  {
        element.querySelector('a').classList.toggle('bg-error');
      } else {
       element.querySelector('a').classList.toggle('bg-white');
-     }
-   }
+     } 
+     };
+
+   // Eliminar elementos
+
+   console.log($cards);
+   // $cards.innerHTML = ''; // Con este método se puede vaciar rapidamente cualquier contenedor html
+
+  //  while ($cards.lastChild) {  // Loop para remover en order inverso cada uno de los elementos del $cards
+  //   $cards.removeChild($cards.lastChild)
+  //    } 
+  
+  for (let index = array.length-1; index >= 0; index--) {
+    console.log(array[index]);
+    array.remove();
+  }
