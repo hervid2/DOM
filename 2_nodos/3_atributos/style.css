@@ -27,6 +27,7 @@ body {
   line-height: 24px;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
+  height: 100vh;
 }
 
 header {
@@ -119,7 +120,7 @@ form {
   padding: var(--padding);
 }
 
-input {
+input, select {
   display: block;
   width: 90%;
   padding: calc(var(--padding) + 4px);
@@ -164,8 +165,10 @@ button:hover {
   transition: 1s;
   text-align: center;
   font-weight: 500;
+
 }
 .btn:hover {
   background: var(--heavyMetal);
   color: var(--starship);
+
 }
