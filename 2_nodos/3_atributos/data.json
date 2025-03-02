@@ -1,17 +1,17 @@
 [
    { "id":1,
-    "name":"Bucaramanga"
+    "nombre":"Bucaramanga"
 },
 {
     "id":2,
-    "name":"Piedecuesta"
+    "nombre":"Piedecuesta"
 },
 {
     "id":3,
-    "name":"Girón"
+    "nombre":"Girón"
 },
 {
     "id":4,
-    "name":"Floridablanca"
+    "nombre":"Floridablanca"
 }
 ]

@@ -167,6 +167,20 @@ button:hover {
   font-weight: 500;
 
 }
+
+
+#masculino, #femenino, #otro{
+  display: inline;
+  width: 40px;
+  margin: 15px;
+}
+
+#checkbox{
+  width: 10px;
+  display: inline;
+  margin: 25px;
+}
+
 .btn:hover {
   background: var(--heavyMetal);
   color: var(--starship);
