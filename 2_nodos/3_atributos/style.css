@@ -186,3 +186,18 @@ button:hover {
   color: var(--starship);
 
 }
+
+div.radios{
+  display: flex;
+  width: inherit;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container-lenguajes{
+  display: flex;
+}
+
+.error{
+  border: solid 1px red;
+}
