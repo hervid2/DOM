@@ -27,58 +27,21 @@ terminos.insertAdjacentElement("afterend",label);
 ciudades(formulario);
 generos(formulario);
 cargarLenguajes(formulario);
-is_valid(event,string);
+// is_valid(event,string);
 
 
 
 // validar un formulario
 const validar = (event) => {
-  // detenemos el evento
-  event.preventDefault();
-
-  // validamos los campos
-  // if (nombre.value == "") {
-  //   alert("El nombre es obligatorio");
-  //   nombre.focus();
-  // }
-  // if (apellido.value == "") {
-  //   alert("El apellido es obligatorio");
-  //   apellido.focus();
-  // }
-  // if (telefono.value == "") {
-  //   alert("El telefono es obligatorio");
-  //   telefono.focus();
-  // }
-  // if (documento.value == "") {
-  //   alert("El documento es obligatorio");
-  //   documento.focus();
-  // }
-  // if (usuario.value == "") {
-  //   alert("El usuario es obligatorio");
-  //   usuario.focus();
-  // }
-  // if (contrasena.value == "") {
-  //   alert("La contraseña es obligatoria");
-  //   contrasena.focus();
-  // }
+  let a = is_valid(event,"form");
+  // console.log(a);
 };
-const contextMenu = () => {
-//   alert("?"); 
-};
-const dblclick = () => {
-//   alert("doble click"); 
-};
-const mousedown = () => {
-//   alert(
-//     "El evento funciona cuando se mantiene presiono cualquier click sobre el elemento"
-//   );
-}; 
+ 
 const keydown = (event) => {
 //   alert(`Presionaste la tecla ${event.key}`);
 }; 
 
-
-//Validar checkbox
+// Validar checkbox
 const validar_terminos = () => {
 //   if (terminos.checked) {
 //     btn.removeAttribute("disabled", "");
@@ -87,6 +50,7 @@ const validar_terminos = () => {
 //   }
 (terminos.checked) ? btn.removeAttribute("disabled"): btn.setAttribute("disabled");
 };
+
 nombre.addEventListener("keydown",keydown);
 terminos.addEventListener("change",validar_terminos);
 // btn.addEventListener("click", validar);
