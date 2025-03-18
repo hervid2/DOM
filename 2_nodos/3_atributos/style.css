@@ -198,6 +198,13 @@ div.radios{
   display: flex;
 }
 
-.error{
-  border: solid 1px red;
+ .error {
+  border: solid 1px red; /* Borde rojo para campos inválidos */
 }
+
+.error-message {
+  color: red; /* Color del texto del mensaje de error */
+  font-size: 0.9rem; /* Tamaño del texto del mensaje de error */
+  margin-top: 5px; /* Espaciado superior del mensaje de error */
+  display: block; /* Mostrar el mensaje en una línea nueva */
+} 

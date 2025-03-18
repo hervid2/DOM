@@ -1,8 +1,9 @@
 import { ciudades } from "./ciudades.js";
-import {generos} from "./generos.js";
+import { generos } from "./generos.js";
 import { cargarLenguajes } from "./lenguajes.js";
 import is_valid from "./validar.js";
 
+// Seleccionar elementos del DOM
 const body = document.querySelector("body");
 const formulario = document.querySelector("#formulario");
 const nombre = document.getElementById("nombre");
@@ -12,46 +13,34 @@ const documento = document.querySelector("#documento");
 const usuario = document.querySelector("#usuario");
 const contrasena = document.querySelector("#contrasena");
 const btn = document.querySelector("button");
+
+// Crear checkbox de términos y condiciones
 const terminos = document.createElement("input");
 terminos.setAttribute("type", "checkbox");
-terminos.id = 'checkbox';
-btn.disabled = true;
+terminos.id = "checkbox";
+btn.disabled = true; // Deshabilitar el botón inicialmente
 btn.insertAdjacentElement("beforebegin", terminos);
+
+// Crear label para los términos y condiciones
 const label = document.createElement("label");
 label.textContent = "Acepto los términos y condiciones";
 label.setAttribute("for", "terminos");
-terminos.insertAdjacentElement("afterend",label);
+terminos.insertAdjacentElement("afterend", label);
 
-
-
+// Cargar dinámicamente ciudades, géneros y lenguajes
 ciudades(formulario);
 generos(formulario);
 cargarLenguajes(formulario);
-// is_valid(event,string);
 
+// Validar el formulario al enviar
+formulario.addEventListener("submit", (event) => {
+  is_valid(event, "#formulario");
+});
 
-
-// validar un formulario
-const validar = (event) => {
-  let a = is_valid(event,"form");
-  // console.log(a);
-};
- 
-const keydown = (event) => {
-//   alert(`Presionaste la tecla ${event.key}`);
-}; 
-
-// Validar checkbox
+// Validar términos y condiciones
 const validar_terminos = () => {
-//   if (terminos.checked) {
-//     btn.removeAttribute("disabled", "");
-//   } else {
-//     btn.setAttribute("disabled", "");
-//   }
-(terminos.checked) ? btn.removeAttribute("disabled"): btn.setAttribute("disabled");
+  btn.disabled = !terminos.checked; // Habilitar o deshabilitar el botón según el checkbox
 };
 
-nombre.addEventListener("keydown",keydown);
-terminos.addEventListener("change",validar_terminos);
-// btn.addEventListener("click", validar);
-terminos.addEventListener("submit", validar);
+// Evento para validar términos y condiciones
+terminos.addEventListener("change", validar_terminos);
